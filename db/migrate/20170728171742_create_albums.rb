@@ -3,10 +3,10 @@ class CreateAlbums < ActiveRecord::Migration[5.1]
     create_table :albums do |t|
       t.string :image_url
       t.datetime :released_at
-      t.belongs_to :artist, foreign_key: true
-
+      t.belongs_to :artist, index: true
+      # t.belongs_to :artist, foreign_key: true
       t.timestamps
     end
-    add_foreign_key :albums, :artists
+    # add_foreign_key :albums, :artists
   end
 end
