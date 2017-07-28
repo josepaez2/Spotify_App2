@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20170728171749) do
 
   create_table "albums", force: :cascade do |t|
+    t.string "name"
     t.string "image_url"
     t.datetime "released_at"
     t.integer "artist_id"
