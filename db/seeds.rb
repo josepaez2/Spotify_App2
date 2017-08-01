@@ -10,10 +10,26 @@ Album.destroy_all
 Song.destroy_all
 
 
-artist = Artist.create(name: "Pepito")
+artista = Artist.create(name: "Pepito")
 
 10.times do |i|
-	Artist.create(name: i + 100)
+	# Artist.create(name: i + 100)
+	artist = Artist.create(name: i + 100)
+	puts "artist"
+	puts artist
 	artist.albums.create(name: i + 1000)
-	artist.albums[i].songs.create(name: i + 10000)
+	puts "artist.albums"
+	puts artist.albums
+	puts "artist.albums[0]"
+	puts artist.albums[0]
+	puts "artist.albums[0].songs"
+	puts artist.albums[0].songs
+	artist.albums[0].songs.create(name: i + 1 + 10000)
+	artist.albums[0].songs.create(name: i + 2 + 10000)
+	artist.albums[0].songs.create(name: i + 3 + 10000)
+	puts "artist.albums[0]"
+	puts artist.albums[0]
+	puts "artist.albums[0].songs"
+	puts artist.albums[0].songs
 end
+
