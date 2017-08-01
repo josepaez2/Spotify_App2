@@ -1,0 +1,16 @@
+<h1><%= @artist.name %></h1>
+
+<h3>Los capitulos de este libro son:</h3>
+
+<!-- Que es el problema de query N+1 -->
+<ul>
+  <% @artist.albums.each do |album| %>
+    <li><%= album.name %></li>
+    <p>Con la oracion de tamaño</p>
+    <ul>
+      <% album.songs.each do |sentence| %>
+        <li><%= song.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
